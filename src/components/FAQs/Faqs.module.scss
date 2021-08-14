@@ -1,0 +1,42 @@
+@import "../../_mixins";
+.BodyDiv {
+    width: 86%;
+    @include paddingStyle($left: 7%, $right: 7%, $bottom: 10vh)
+}
+
+.HeaderText{
+    @include fontStyle($fontSize: 7.2vh, $fontWeight: normal);
+    margin-top: 12vh;
+    margin-bottom: 5vh;
+    text-decoration: underline;
+    text-align: center
+}
+
+.IntroText{
+    @include fontStyle($fontSize:3vh, $lineHeight:5vh);
+    margin-bottom: 0vh;
+    @include paddingStyle($top: 0vh, $right: 3vw, $left: 3vw);
+    text-align: center;
+}
+
+.BodyContent {
+    @include flexStyle();
+    margin-bottom: 7.5vh;
+}
+
+.hide {
+    display: none;
+  }
+      
+
+.myDIV:hover + .hide {
+    display: flex;
+    align-items: baseline;
+    color: yellow;
+}
+
+.temp{
+    height: 2%;
+    width:10%;
+    background-color: red
+}

@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route, BrowserRouter as Router, Redirect } from 'react-router-dom'
+import Home from './components/Home/home.jsx'
+import Gallery from './components/Gallery/gallery.jsx'
+import FAQs from './components/FAQs/faqs.jsx'
+import Mobile from './components/Mobile/mobile.jsx'
+import { isMobile } from 'react-device-detect';
 
 function App() {
+
+  const pages = (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/gallery" component={Gallery} />
+        <Route exact path="/FAQs" component={FAQs} />
+        <Redirect to="/" />
+      </Switch>
+    </Router>
+  )
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div>
+      {
+        isMobile ? (
+          <Mobile />
+        ) : (
+          pages
+        )
+      }
     </div>
   );
 }

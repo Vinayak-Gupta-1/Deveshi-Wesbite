@@ -1,0 +1,25 @@
+@import "../../_mixins";
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+.BodyDiv {
+    width: 86%;
+    @include paddingStyle($left: 7%, $right: 7%, $bottom: 10vh)
+}
+
+.BodyContent {
+    @include flexStyle($justify: center);
+    margin-bottom: 7.5vh;
+}
+
+.IntroText{
+    @include fontStyle($fontSize:3vh, $lineHeight:5vh);
+    @include paddingStyle($top: 0vh, $bottom: 5vh, $right: 3vw, $left: 3vw);
+    text-align: center;
+}
+
+.HeaderText{
+    @include fontStyle($fontSize: 7.2vh, $fontWeight: normal);
+    margin-top: 12vh;
+    margin-bottom: 7.5vh;
+    text-decoration: underline;
+    text-align: center
+}
