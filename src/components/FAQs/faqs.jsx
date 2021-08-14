@@ -5,42 +5,46 @@ import FaqsStyles from "./Faqs.module.scss"
 function FAQsingle(props) {
     const [hover, setHover] = useState(false);
     const background = props["background"];
+    const question = props["question"];
+    const answer = props["answer"];
     return (
-        <div className={FaqsStyles.temp} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-            <p className={hover ? FaqsStyles.question_hover : FaqsStyles.question}>Hover over me.</p>
-            <p className={hover ? FaqsStyles.answer_hover : FaqsStyles.answer}>I am shown when someone hovers over the div above.</p>
+        <div className={FaqsStyles.insideBox} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} style={{ backgroundColor: background }}>
+            <p className={hover ? FaqsStyles.questionHover : FaqsStyles.question}>{question}</p>
+            <p className={hover ? FaqsStyles.answerHover : FaqsStyles.answer}>{answer}</p>
         </div>
     )
 }
 function FAQGroup(props) {
-    const outerDivStyle = props["outerDivStyle"];
-    const imgSrc = props["imgSrc"];
-    const status = props["status"];
-    const type = props["type"];
-    const projectName = props["projectName"];
-    const projectDesc = props["projectDesc"];
-    const viewLink = props["viewLink"]
-    if (viewLink === "") {
-    }
-    else if (viewLink === "https://www.oise.utoronto.ca/ejanglab/research/balanceai/") {
-        var view = <a className={FaqsStyles.ViewProjectText} href={viewLink} target="_blank">Know More</a>
-    }
-    else {
-        var view = <a className={FaqsStyles.ViewProjectText} href={viewLink} target="_blank">Read Paper</a>
-    }
+    const question1 = props["question1"];
+    const answer1 = props["answer1"];
+    const question2 = props["question2"];
+    const answer2 = props["answer2"];
+    const question3 = props["question3"];
+    const answer3 = props["answer3"];
     return (
-        <div className={outerDivStyle}>
-            <img className={FaqsStyles.Image} src={imgSrc} />
-            <p className={FaqsStyles.MiniHeaderText}> <span style={{ textDecoration: "underline" }}> Status:</span> {status} <span style={{ textDecoration: "underline", paddingLeft: "1vh" }}> <br />Type:</span> {type}</p>
-            <p className={FaqsStyles.SubHeaderText}>{projectName}</p>
-            <p className={FaqsStyles.BodyText}>{projectDesc}</p><br />
-            {view}
+        <div className={FaqsStyles.Box}>
+            <FAQsingle
+                background="#b6dedb"
+                question={question1}
+                answer={answer1}
+            />
+            <FAQsingle
+                background="#c8e6e3"
+                question={question2}
+                answer={answer2}
+            />
+            <FAQsingle
+                background="#d9eeec"
+                question={question3}
+                answer={answer3}
+            />
+
         </div >
     )
 }
 
 
-function Resume() {
+function Faqs() {
     return (
         <div >
             <Header />
@@ -52,13 +56,18 @@ function Resume() {
                     I hope you enjoy reading about them as much as I did experiencing them...
                 </p>
                 <div className={FaqsStyles.BodyContent}>
-                    <FAQsingle background="red" />
-                    <FAQsingle background="red" />
-                    <FAQsingle background="red" />
+                    <FAQGroup
+                        question1="What is your name?"
+                        answer1="My name is Deveshi Gupta"
+                        question2="What is your name? "
+                        answer2="My name is Deveshi Gupta"
+                        question3="What is your name?"
+                        answer3="My name is Deveshi Gupta"
+                    />
                 </div>
             </div >
         </div >
     );
 }
 
-export default Resume;
+export default Faqs;

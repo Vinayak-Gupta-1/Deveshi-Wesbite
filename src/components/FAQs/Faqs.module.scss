@@ -21,38 +21,40 @@
 
 .BodyContent {
     @include flexStyle($justify: space-between);
-    // margin-bottom: 7.5vh;
 }      
 
 .question {
     margin-top: 8vh;
     align-items: baseline;
-    color: yellow;
+    @include fontStyle($fontSize: 3vh)
 }
 
 .answer {
     opacity: 0;
 }
 
-.question_hover {
+.questionHover {
     @extend .question;
     margin-top: 2vh;
     transition: 250ms linear;
 }
 
-.answer_hover {
+.answerHover {
     @extend .answer;
     opacity: 1;
     transition: 250ms linear;
 }
 
-.temp {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-    // width: 40vh;
-    background-color: red;
-    // overflow: hidden;
+.insideBox{
+    text-align: center;
+    width: 33.333%; 
+    height: 40vh;
+    @include paddingStyle($top: 7vh, $bottom: 2vh, $right: 2vh, $left: 2vh)
+}
+
+.Box{
+    @include flexStyle();
+    margin-top: 10vh;
+    flex-direction: row;
+    width: 100%
 }

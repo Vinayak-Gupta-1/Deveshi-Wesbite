@@ -32,9 +32,9 @@ function Home() {
                 <div className={HomeStyles.HeaderDiv}>
                     <p className={HomeStyles.HeaderText}>
                         <span className={HomeStyles.PreHeaderText}>
-                            Welcome to my <span style={{ color: "#369b98" }}>secret lair!</span>< br /></span>
+                            Welcome to my <span style={{ color: "#369b98" }}>(virtual) dental chair!</span>< br /></span>
                         <br />
-                        I'm a <span style={{ textDecoration: "underline" }}>problem solver</span> <br />and <span style={{ textDecoration: "underline" }}>lifelong learner</span><br />passionate about <span style={{ color: "#369b98" }}>Computer Science</span>
+                        I'm a <span style={{ textDecoration: "underline" }}>problem solver</span> <br />and <span style={{ textDecoration: "underline" }}>lifelong learner</span><br />passionate about <span style={{ color: "#369b98" }}>Pediatric Dentistry</span>
                     </p>
                     <div className={HomeStyles.ImagesDiv}>
                         <img className={HomeStyles.ProfilePicture} src={profile_pic} />
