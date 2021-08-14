@@ -1,12 +1,14 @@
+import { useState } from 'react'
 import Header from '../Header/header.jsx'
 import FaqsStyles from "./Faqs.module.scss"
 
 function FAQsingle(props) {
-    const background = props["background"]
+    const [hover, setHover] = useState(false);
+    const background = props["background"];
     return (
-        <div className={FaqsStyles.temp}>
-            <p className={FaqsStyles.myDIV} >Hover over me.</p>
-            <p className={FaqsStyles.hide}>I am shown when someone hovers over the div above.</p>
+        <div className={FaqsStyles.temp} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+            <p className={hover ? FaqsStyles.question_hover : FaqsStyles.question}>Hover over me.</p>
+            <p className={hover ? FaqsStyles.answer_hover : FaqsStyles.answer}>I am shown when someone hovers over the div above.</p>
         </div>
     )
 }
@@ -27,7 +29,7 @@ function FAQGroup(props) {
         var view = <a className={FaqsStyles.ViewProjectText} href={viewLink} target="_blank">Read Paper</a>
     }
     return (
-        < div className={outerDivStyle}>
+        <div className={outerDivStyle}>
             <img className={FaqsStyles.Image} src={imgSrc} />
             <p className={FaqsStyles.MiniHeaderText}> <span style={{ textDecoration: "underline" }}> Status:</span> {status} <span style={{ textDecoration: "underline", paddingLeft: "1vh" }}> <br />Type:</span> {type}</p>
             <p className={FaqsStyles.SubHeaderText}>{projectName}</p>
@@ -50,6 +52,8 @@ function Resume() {
                     I hope you enjoy reading about them as much as I did experiencing them...
                 </p>
                 <div className={FaqsStyles.BodyContent}>
+                    <FAQsingle background="red" />
+                    <FAQsingle background="red" />
                     <FAQsingle background="red" />
                 </div>
             </div >

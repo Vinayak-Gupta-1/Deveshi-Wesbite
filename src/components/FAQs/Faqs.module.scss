@@ -20,23 +20,39 @@
 }
 
 .BodyContent {
-    @include flexStyle();
-    margin-bottom: 7.5vh;
-}
+    @include flexStyle($justify: space-between);
+    // margin-bottom: 7.5vh;
+}      
 
-.hide {
-    display: none;
-  }
-      
-
-.myDIV:hover + .hide {
-    display: flex;
+.question {
+    margin-top: 8vh;
     align-items: baseline;
     color: yellow;
 }
 
-.temp{
-    height: 2%;
-    width:10%;
-    background-color: red
+.answer {
+    opacity: 0;
+}
+
+.question_hover {
+    @extend .question;
+    margin-top: 2vh;
+    transition: 250ms linear;
+}
+
+.answer_hover {
+    @extend .answer;
+    opacity: 1;
+    transition: 250ms linear;
+}
+
+.temp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    // width: 40vh;
+    background-color: red;
+    // overflow: hidden;
 }
