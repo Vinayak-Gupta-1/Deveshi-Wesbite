@@ -14,9 +14,9 @@ function Mobile() {
             <div className={MobileStyles.BodyText}>
                 <text>
                     Well, the mobile version is still under construction. Until it's ready, I'll be waiting for
-                    you on the awesome desktop version instead!< br /><br />
+                    you on the desktop version instead!< br /><br />
                     Cheers!<br />
-                    Vinayak Gupta
+                    Dr. Deveshi Gupta
                 </text>
             </div>
         </div>
