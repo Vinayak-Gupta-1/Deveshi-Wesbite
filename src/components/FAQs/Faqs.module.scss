@@ -18,19 +18,16 @@
     @include paddingStyle($top: 0vh, $right: 3vw, $left: 3vw);
     text-align: center;
 }
-
-.BodyContent {
-    @include flexStyle($justify: space-between);
-}      
-
+ 
 .question {
     margin-top: 8vh;
-    align-items: baseline;
+    align-items: center;
     @include fontStyle($fontSize: 3vh)
 }
 
 .answer {
     opacity: 0;
+    @include fontStyle($fontSize: 2.5vh, $lineHeight: 4.7vh)
 }
 
 .questionHover {
@@ -48,8 +45,8 @@
 .insideBox{
     text-align: center;
     width: 33.333%; 
-    height: 40vh;
-    @include paddingStyle($top: 7vh, $bottom: 2vh, $right: 2vh, $left: 2vh)
+    height: 60vh;
+    @include paddingStyle($top: 7vh, $bottom: 3vh, $right: 3vh, $left: 3vh)
 }
 
 .Box{
@@ -57,4 +54,9 @@
     margin-top: 10vh;
     flex-direction: row;
     width: 100%
+}
+
+.Box2{
+    @extend .Box;
+    @include flexStyle($justify: flex-start)
 }
